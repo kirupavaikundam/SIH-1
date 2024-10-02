@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Integrated Innovation Management Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            margin-top: 100px; /* Adjust margin for space below header */
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 24px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: #f9f9f9;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #007bff;
+            background-color: #fff;
+        }
+
+        .form-group .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        .submit-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 14px 0;
+            border-radius: 4px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .additional-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .additional-links a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .additional-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* CAPTCHA Section */
+        .captcha-container {
+            margin-bottom: 20px;
+        }
+
+        .captcha-instructions {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .captcha-images {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .captcha-images img {
+            width: 30%;
+            height: auto;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 5px;
+        }
+
+        .captcha-images img.selected {
+            border-color: #007bff;
+        }
+
+        .captcha-error {
+            color: red;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        /* Center the login form vertically and horizontally */
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding-top: 80px; /* Leave space for the fixed header */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login/Register</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="invest.html">Invest</a></li>
+                <li><a href="ipr.html">IPR</a></li>
+                <li><a href="mentorship.html">Mentorship</a></li>
+                <li><a href="scoreboard.html">Scoreboard</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <div class="login-container">
+            <h2>Login to Your Account</h2>
+            <form id="loginForm" onsubmit="return handleLogin(event)">
+                <div class="form-group">
+                    <label for="username">Username or Email</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username or email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="rememberMe" name="rememberMe">
+                    <label for="rememberMe">Remember me</label>
+                </div>
+
+                <!-- Image CAPTCHA Section -->
+                <div class="captcha-container">
+                    <p class="captcha-instructions">Select all images with cars:</p>
+                    <div class="captcha-images">
+                        <img src="images/car1.jpg" data-answer="correct" alt="Car 1">
+                        <img src="images/plane1.jpg" data-answer="incorrect" alt="Plane 1">
+                        <img src="images/bike1.jpg" data-answer="incorrect" alt="Bike 1">
+                        <img src="images/car2.jpg" data-answer="correct" alt="Car 2">
+                        <img src="images/train1.jpg" data-answer="incorrect" alt="Train 1">
+                        <img src="images/car3.jpg" data-answer="correct" alt="Car 3">
+                    </div>
+                    <div id="captchaError" class="captcha-error"></div>
+                </div>
+
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+            <div class="additional-links">
+                <p><a href="#">Forgot your password?</a></p>
+                <p>Don't have an account? <a href="register.html" id="registerLink">Register here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // CAPTCHA Image Selection Logic
+        const images = document.querySelectorAll('.captcha-images img');
+        const selectedImages = new Set();
+
+        images.forEach(image => {
+            image.addEventListener('click', function() {
+                const isSelected = selectedImages.has(this);
+                if (isSelected) {
+                    this.classList.remove('selected');
+                    selectedImages.delete(this);
+                } else {
+                    this.classList.add('selected');
+                    selectedImages.add(this);
+                }
+            });
+        });
+
+        // Validate the selected images
+        function validateCaptcha() {
+            const captchaError = document.getElementById('captchaError');
+            let correctSelections = 0;
+
+            selectedImages.forEach(img => {
+                if (img.getAttribute('data-answer') === 'correct') {
+                    correctSelections++;
+                }
+            });
+
+            if (correctSelections === 3) { // Assume we expect 3 correct selections
+                captchaError.innerText = ''; // Clear any previous error message
+                return true;
+            } else {
+                captchaError.innerText = 'Please select all the correct images with cars.';
+                return false;
+            }
+        }
+
+        // Handle login form submission
+        function handleLogin(event) {
+            event.preventDefault(); // Prevent default form submission behavior
+            if (validateCaptcha()) {
+                alert('Login successful!');
+                window.location.href = 'projects.html'; // Redirect to projects page after login
+            }
+        }
+    </script>
+</body>
+</html>

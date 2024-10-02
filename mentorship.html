@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentorship Opportunities</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #007bff;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            justify-items: center;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            max-width: 300px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            margin: 15px 0;
+            padding: 0 20px;
+            font-size: 1.5rem;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .card p {
+            padding: 0 20px;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .card a {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .card a:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container h2 {
+                font-size: 2rem;
+            }
+
+            .card img {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login/Register</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="invest.html">Invest</a></li>
+                <li><a href="ipr.html">IPR</a></li>
+                <li><a href="mentorship.html">Mentorship</a></li>
+                <li><a href="scoreboard.html">Scoreboard</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="container">
+        <h2>Mentorship Opportunities</h2>
+        <div class="grid">
+            <!-- Mentor Card 1 -->
+            <div class="card">
+                <img src="images/mentor1.jpg" alt="Mentor 1">
+                <h3>Dr. Alice Johnson</h3>
+                <p>Expert in Product Innovation with over 15 years of experience in tech startups and growth strategy.</p>
+                <a href="mentor-details.html?mentor=1">Contact Mentor</a>
+            </div>
+
+            <!-- Mentor Card 2 -->
+            <div class="card">
+                <img src="images/mentor2.jpg" alt="Mentor 2">
+                <h3>John Smith</h3>
+                <p>Specialist in Venture Capital and startup funding, with 20+ successful exits in Silicon Valley.</p>
+                <a href="mentor-details.html?mentor=2">Contact Mentor</a>
+            </div>
+
+            <!-- Mentor Card 3 -->
+            <div class="card">
+                <img src="images/mentor3.jpg" alt="Mentor 3">
+                <h3>Sarah Williams</h3>
+                <p>Leadership coach and expert in scaling operations, with a focus on sustainability and social enterprises.</p>
+                <a href="mentor-details.html?mentor=3">Contact Mentor</a>
+            </div>
+
+            <!-- Mentor Card 4 -->
+            <div class="card">
+                <img src="images/mentor4.jpg" alt="Mentor 4">
+                <h3>Michael Brown</h3>
+                <p>Data science and AI mentor with 10+ years of experience helping startups develop AI-powered solutions.</p>
+                <a href="mentor-details.html?mentor=4">Contact Mentor</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Integrated Innovation Management Platform</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

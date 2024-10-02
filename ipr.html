@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPR Registration</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        /* Tabs */
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .tabs button {
+            background-color: #ddd;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px 5px 0 0;
+        }
+        .tabs button.active {
+            background-color: #007bff;
+            color: white;
+        }
+        /* Tab content */
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        /* Form styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            width: 100%;
+        }
+        button[type="submit"] {
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .modal-content h3 {
+            margin-bottom: 10px;
+            color: #28a745;
+        }
+        .modal-content p {
+            font-size: 16px;
+            color: #333;
+        }
+        .close-modal {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .close-modal:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login/Register</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="invest.html">Invest</a></li>
+                <li><a href="ipr.html">IPR</a></li>
+                <li><a href="mentorship.html">Mentorship</a></li>
+                <li><a href="scoreboard.html">Scoreboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>IPR Registration</h2>
+        <!-- Tabs for selecting IPR type -->
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('patent')">Patent</button>
+            <button class="tab-button" onclick="showTab('trademark')">Trademark</button>
+            <button class="tab-button" onclick="showTab('copyright')">Copyright</button>
+        </div>
+
+        <!-- Patent Form -->
+        <div id="patent" class="tab-content active">
+            <form id="patent-form" onsubmit="showModal(event)">
+                <label for="invention-title">Invention Title</label>
+                <input type="text" id="invention-title" name="invention-title" required>
+                <label for="inventor-name">Inventor's Name</label>
+                <input type="text" id="inventor-name" name="inventor-name" required>
+                <label for="filing-date">Filing Date</label>
+                <input type="date" id="filing-date" name="filing-date" required>
+                <label for="patent-details">Patent Details</label>
+                <textarea id="patent-details" name="patent-details" rows="5" required></textarea>
+                <label for="supporting-documents">Upload Supporting Documents</label>
+                <input type="file" id="supporting-documents" name="supporting-documents" accept=".pdf,.doc,.docx" required>
+                <button type="submit">Submit Patent Application</button>
+            </form>
+        </div>
+
+        <!-- Trademark Form -->
+        <div id="trademark" class="tab-content">
+            <form id="trademark-form" onsubmit="showModal(event)">
+                <label for="trademark-name">Trademark Name</label>
+                <input type="text" id="trademark-name" name="trademark-name" required>
+                <label for="owner-name">Owner's Name</label>
+                <input type="text" id="owner-name" name="owner-name" required>
+                <label for="logo">Upload Logo</label>
+                <input type="file" id="logo" name="logo" accept="image/*" required>
+                <label for="trademark-details">Trademark Description</label>
+                <textarea id="trademark-details" name="trademark-details" rows="5" required></textarea>
+                <button type="submit">Submit Trademark Application</button>
+            </form>
+        </div>
+
+        <!-- Copyright Form -->
+        <div id="copyright" class="tab-content">
+            <form id="copyright-form" onsubmit="showModal(event)">
+                <label for="work-title">Work Title</label>
+                <input type="text" id="work-title" name="work-title" required>
+                <label for="author-name">Author's Name</label>
+                <input type="text" id="author-name" name="author-name" required>
+                <label for="work-type">Type of Work</label>
+                <select id="work-type" name="work-type" required>
+                    <option value="literary">Literary Work</option>
+                    <option value="musical">Musical Work</option>
+                    <option value="artistic">Artistic Work</option>
+                </select>
+                <label for="work-details">Work Description</label>
+                <textarea id="work-details" name="work-details" rows="5" required></textarea>
+                <label for="work-upload">Upload Work</label>
+                <input type="file" id="work-upload" name="work-upload" accept=".pdf,.doc,.mp3,.jpg,.png" required>
+                <button type="submit">Submit Copyright Application</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Acknowledgement -->
+    <div id="acknowledgement-modal" class="modal">
+        <div class="modal-content">
+            <h3>Submission Successful!</h3>
+            <p>Thank you for submitting your IPR application. Your application has been received, and we will get back to you soon.</p>
+            <button class="close-modal" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Integrated Innovation Management Platform</p>
+    </footer>
+
+    <script>
+        // JavaScript to handle tab switching
+        function showTab(tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.classList.add("active");
+        }
+
+        // Default display of the first tab
+        document.getElementById("patent").style.display = "block";
+
+        // Function to show modal on form submission
+        function showModal(event) {
+            event.preventDefault(); // Prevent form submission to server
+            document.getElementById("acknowledgement-modal").style.display = "flex";
+        }
+
+        // Function to close modal
+        function closeModal() {
+            document.getElementById("acknowledgement-modal").style.display = "none";
+        }
+    </script>
+</body>
+</html>

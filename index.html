@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrated Innovation Management Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Additional styles for the updates section */
+        .updates-section {
+            background-color: #f9f9f9;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .updates-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .updates-section .update-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .update-card {
+            background-color: white;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            width: 30%;
+            text-align: left;
+        }
+
+        .update-card h3 {
+            font-size: 20px;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .update-card p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .update-card .date {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        /* Adjustments for responsiveness */
+        @media (max-width: 768px) {
+            .update-card {
+                width: 100%;
+            }
+        }
+
+        .scrolling-ticker {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .scrolling-ticker p {
+            animation: ticker 15s linear infinite;
+            white-space: nowrap;
+            margin: 0;
+            font-size: 16px;
+        }
+
+        @keyframes ticker {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login/Register</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="invest.html">Invest</a></li>
+                <li><a href="ipr.html">IPR</a></li>
+                <li><a href="mentorship.html">Mentorship</a></li>
+                <li><a href="scoreboard.html">Scoreboard</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to the Integrated Innovation Management Platform</h1>
+            <p>Your one-stop solution for managing research, innovation, startups, and intellectual property rights.</p>
+            <a href="projects.html" class="cta-button">Explore Projects</a>
+        </div>
+        <div class="hero-image-container">
+            <img src="images/hero-image.jpg" alt="Innovation Banner" class="hero-image">
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Why Choose Us?</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="images/project1.jpg" alt="Research">
+                <h3>Manage Your Research</h3>
+                <p>Streamline and monitor your research progress efficiently.</p>
+            </div>
+            <div class="card">
+                <img src="images/project2.jpg" alt="Startups">
+                <h3>Innovative Startups</h3>
+                <p>Discover innovative startups and projects to invest in.</p>
+            </div>
+            <div class="card">
+                <img src="images/project3.jpg" alt="IPR">
+                <h3>Protect Your Ideas</h3>
+                <p>Patent, trademark, or copyright your intellectual property with ease.</p>
+            </div>
+            <div class="card">
+                <img src="images/project4.jpg" alt="Mentorship">
+                <h3>Mentorship & Opportunities</h3>
+                <p>Connect with mentors and explore employment opportunities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Updates Section -->
+    <section class="updates-section">
+        <h2>Latest Business Investments & Innovation Updates</h2>
+        <div class="update-grid">
+            <div class="update-card">
+                <span class="date">September 14, 2024</span>
+                <h3>New Investment in AI-Based Startups</h3>
+                <p>Leading VC firms have invested $50M into AI-based startups, boosting innovation in the AI space.</p>
+            </div>
+            <div class="update-card">
+                <span class="date">September 10, 2024</span>
+                <h3>Top Innovations in Renewable Energy</h3>
+                <p>Recent breakthroughs in solar energy are set to revolutionize the renewable energy industry.</p>
+            </div>
+            <div class="update-card">
+                <span class="date">September 8, 2024</span>
+                <h3>Startup Acquisitions on the Rise</h3>
+                <p>Tech giants are acquiring smaller startups, accelerating technological advancements in various sectors.</p>
+            </div>
+        </div>
+        <section class="login-section">
+            <h1>Startup ideas locations in Gujarat</h1>
+            <!-- Your login form goes here -->
+    
+            <!-- Map showing startup ideas locations in Gujarat -->
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1452.981938689822!2d72.5100122964936!3d23.022506978855424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84d7b2a4b9a3%3A0x1234567890abcdef!2sStartup%20Ideas%20Location%20Gujarat!5e0!3m2!1sen!2sin!4v1632232232567!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <!-- Scrolling Ticker for quick updates -->
+        <div class="scrolling-ticker">
+            <p>Breaking News: New $200M Investment in Fintech | 5G Technology Expands Globally | Renewable Energy Innovators Win Prestigious Award</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Integrated Innovation Management Platform. All rights reserved.</p>
+    </footer>
+</body>
+</html>

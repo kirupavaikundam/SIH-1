@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Details</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #007bff;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .mentor-details {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .mentor-details img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .mentor-bio {
+            text-align: left;
+        }
+
+        .mentor-bio p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .mentor-bio h3 {
+            font-size: 1.5rem;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .mentor-bio ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .mentor-bio ul li {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .mentor-bio ul li span {
+            font-weight: bold;
+        }
+
+        .mentor-contact {
+            margin-top: 20px;
+        }
+
+        .mentor-contact a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .mentor-contact a:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .mentor-details {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .mentor-bio {
+                text-align: center;
+            }
+
+            .mentor-details img {
+                margin: 0 auto 20px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login/Register</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="invest.html">Invest</a></li>
+                <li><a href="ipr.html">IPR</a></li>
+                <li><a href="mentorship.html">Mentorship</a></li>
+                <li><a href="scoreboard.html">Scoreboard</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="container">
+        <h2 id="mentor-name">Mentor Name</h2>
+        <div class="mentor-details">
+            <img id="mentor-image" src="images/mentor-detail.jpg" alt="Mentor Image">
+            <div class="mentor-bio">
+                <h3>About the Mentor</h3>
+                <p id="mentor-bio">This is where the biography of the mentor goes, detailing their expertise, background, and experience in mentoring startups and entrepreneurs. This section highlights their key achievements, professional journey, and areas where they can provide valuable guidance to mentees.</p>
+
+                <h3>Expertise</h3>
+                <ul>
+                    <li><span>Specialization:</span> Venture Capital & Startup Funding</li>
+                    <li><span>Years of Experience:</span> 15+ years</li>
+                    <li><span>Industries:</span> Technology, AI, Fintech</li>
+                    <li><span>Mentoring Approach:</span> Hands-on support, strategy development, network access</li>
+                </ul>
+
+                <div class="mentor-contact">
+                    <a href="#">Contact Mentor</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Integrated Innovation Management Platform</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
